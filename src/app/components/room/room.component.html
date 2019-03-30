@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="row justify-content-around">
+        <div class="col-4">
+          <button (click)="openPeople()" class="btn btn-dark pb-0 pt-0">
+            People
+          </button>
+        </div>
+        <div class="col-4">
+          <button (click)="openChat()" class="btn btn-outline-dark pb-0 pt-0">
+            Chat
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 el_room_separator"></div>
+    <div class="col-12 mt-3 mb-3">
+      <div class="el_tabs">
+        <div #chat
+             class="el_tab__chat">
+          <div class="row">
+            <div class="col-8">
+              <div class="form-group">
+                <textarea class="form-control"></textarea>
+              </div>
+            </div>
+            <div class="col-4">
+              <button class="btn btn-outline-dark w-100 h-100">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+        <div #people
+             class="el_tab__people">
+          <div class="media">
+            <div class="media-left">
+              <img src="../../../assets/images/images.jpeg"
+                   alt="Profile image"
+                   class="img-fluid rounded-circle el_profile_image">
+            </div>
+            <div class="media-body ml-3">
+              <h4 class="media-heading">John Doe</h4>
+              <p>Lorem ipsum...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

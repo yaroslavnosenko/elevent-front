@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row justify-content-center mt-5 mb-5">
+    <div class="col-12 col-md-10 col-lg-8 col-xl-6 mt-5">
+      <form [formGroup]="profileForm">
+        <div class="card">
+          <div class="card-header">
+            <p class="mb-0">Profile edit</p>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-6">
+                <img src="../../../assets/images/images.jpeg"
+                     alt=""
+                     class="img-fluid rounded-circle">
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="first_name">First name</label>
+                  <input type="text"
+                         id="first_name"
+                         formControlName="first_name"
+                         class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="last_name">Last name</label>
+                  <input type="text"
+                         id="last_name"
+                         formControlName="last_name"
+                         class="form-control">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="summary">Short summary</label>
+                  <textarea class="form-control el_summary"
+                            formControlName="summary"
+                            name="summary"
+                            id="summary"></textarea>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="bio">Biography</label>
+                  <textarea class="form-control el_summary"
+                            formControlName="bio"
+                            rows="4"
+                            name="bio"
+                            id="bio"></textarea>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="insta">Instagram</label>
+                  <input class="form-control"
+                         formControlName="insta"
+                         type="url"
+                         id="insta">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="skills">Skills</label>
+                  <input class="form-control"
+                         formControlName="skills"
+                         type="url"
+                         id="skills">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="row justify-content-end">
+              <div class="col-auto">
+                <button class="btn btn-outline-success">
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

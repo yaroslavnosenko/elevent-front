@@ -1,0 +1,48 @@
+.el_profile_image {
+  width: 4rem;
+  height: 4rem;
+}
+
+.el_room_separator {
+  width: 100%;
+  height: 0.1rem;
+  background-color: black;
+  margin: {
+    top: 1rem;
+    bottom: 1rem;
+  };
+}
+
+.el_tabs {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
+  .el_tab__people {
+    top: 0;
+    left: 0;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .el_tab__chat {
+    top: 0;
+    left: 0;
+    transition: .5s;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .el_moved__left {
+    transition: .5s;
+    transform: translateX(-100%);
+  }
+
+  .el_moved__center {
+    transition: .5s;
+    transform: translateX(0%);
+  }
+}

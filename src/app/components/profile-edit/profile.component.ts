@@ -9,7 +9,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class ProfileComponent implements OnInit {
 
-  private profileForm: FormGroup;
+  profileForm: FormGroup;
 
   constructor(private router: Router,
               private fb: FormBuilder) {

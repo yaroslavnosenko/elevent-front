@@ -10,6 +10,7 @@ import {RoomComponent} from './components/room/room.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PersonComponent} from './components/person/person.component';
 import { MainComponent } from './components/main/main.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MainComponent } from './components/main/main.component';
     ProfileComponent,
     RoomComponent,
     PersonComponent,
-    MainComponent
+    MainComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

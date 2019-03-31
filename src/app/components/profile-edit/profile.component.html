@@ -144,9 +144,6 @@
             <div class="control">
               <button
                 class="button is-info"
-                [disabled]="
-                  ! (this.profileForm.controls['skill'].value.length > 0)
-                "
                 (click)="addChip()"
               >
                 Add
@@ -157,6 +154,7 @@
           <button
             type="button"
             [disabled]="!profileForm.valid"
+            (click)="save()"
             class="button save is-info"
           >
             <strong> Save </strong>

@@ -15,7 +15,9 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
   profileForm: FormGroup;
 
-  userid: number = 0;
+  userid = 0;
+
+  user: any;
 
   private subs: Subscription[] = [];
 
@@ -34,6 +36,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.subs.push(
       this._user.getUser().subscribe(
         (user: any) => {
+          this.user = user;
           console.log(user);
           this.profileForm.controls.bio.setValue(user.bio);
           this.profileForm.controls.summary.setValue(user.summary);
@@ -48,10 +51,8 @@ export class ProfileComponent implements OnInit, OnDestroy {
   }
 
   addChip() {
-    if (this.profileForm.controls.skill.value.length > 0) {
-      this.chips.push(this.profileForm.controls.skill.value);
-      this.profileForm.controls.skill.reset();
-    }
+    this.chips.push(this.profileForm.controls.skill.value);
+    this.profileForm.controls.skill.reset();
   }
 
   removeChip(name) {
@@ -59,6 +60,22 @@ export class ProfileComponent implements OnInit, OnDestroy {
   }
 
   save() {
-
+    this.subs.push(
+      this._user.updateUser({
+        profile_url: this.user.profile_url,
+        uid: this.user.uid,
+        photo_url: this.user.photo_url,
+        display_name: this.profileForm.controls.display_name.value,
+        email: this.user.email,
+        summary: this.profileForm.controls.summary.value,
+        bio: this.profileForm.controls.bio.value
+      }).subscribe(
+        updated => {
+          this.router.navigate(['']);
+        }, err => {
+          console.log(err);
+        }
+      )
+    );
   }
 }

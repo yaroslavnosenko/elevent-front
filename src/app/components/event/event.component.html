@@ -1,11 +1,11 @@
 <app-header></app-header>
-<button type="button"
-        (click)="showMessages()"
-        class="button mes-b">Messsages
+<button type="button" (click)="showMessages()" class="button mes-b is-info">
+  Messsages
 </button>
 <main>
   <div class="container">
-    <div class="" *ngIf="event">
+    <!-- <div class="" *ngIf="event"> -->
+    <div class="">
       <div class="columns">
         <div class="column">
           <div
@@ -13,14 +13,14 @@
             [style.background-image]="'url(' + event.img_url + ')'"
           ></div>
           <a href="{{event.site}}" class="button">Visit website</a>
-          <h1 class="title is-4">{{event.name}}</h1>
-          <p><strong>{{event.city + ', '+ event.address}}</strong></p>
-          <p>10 Feb 2007 - 11 Feb 2007</p>
-          <hr/>
-          <p class="desc">
-            {{event.description}}
+          <h1 class="title is-4">{{ event.name }}</h1>
+          <p>
+            <strong>{{ event.city + ", " + event.address }}</strong>
           </p>
-          <hr/>
+          <p>10 Feb 2007 - 11 Feb 2007</p>
+          <hr />
+          <p class="desc">{{ event.description }}</p>
+          <hr />
 
           <h2 class="title is-5">Partners</h2>
           <div class="user">
@@ -28,19 +28,50 @@
               class="user-profile-image"
               style="background-image: url('https://www.tatrabanka.sk/images/sk/o-banke/o-banke/dolezite-dokumenty/logo-banky-stiahnutie/logo-modre/tatra_banka_blue.jpg')"
             ></div>
-            <div>
-              <div class="user-name">Tatra banka</div>
-            </div>
+            <div><div class="user-name">Tatra banka</div></div>
+          </div>
+
+          <div class="user">
+            <div
+              class="user-profile-image"
+              style="background-image: url('https://scontent.fksc1-1.fna.fbcdn.net/v/t1.0-9/10978601_836372069734213_7241985696483449412_n.png?_nc_cat=108&_nc_ht=scontent.fksc1-1.fna&oh=466d4168d1143571dd409764afb6d4e6&oe=5D4B9B9E')"
+            ></div>
+            <div><div class="user-name">Mediworkx</div></div>
+          </div>
+
+          <div class="user">
+            <div
+              class="user-profile-image"
+              style="background-image: url('https://scontent.fksc1-1.fna.fbcdn.net/v/t1.0-9/23915936_1608110742582805_3891992126210609875_n.png?_nc_cat=101&_nc_ht=scontent.fksc1-1.fna&oh=a5f39ca0107e2e2596555803b7e63a9b&oe=5D488260')"
+            ></div>
+            <div><div class="user-name">Kosice IT Valley</div></div>
+          </div>
+
+          <div class="user">
+            <div
+              class="user-profile-image"
+              style="background-image: url('https://scontent.fksc1-1.fna.fbcdn.net/v/t1.0-9/44944464_2054451771286290_5032913621722595328_n.png?_nc_cat=103&_nc_ht=scontent.fksc1-1.fna&oh=c0091b92f586c03803a38d5db3ae1f79&oe=5D0E60BD')"
+            ></div>
+            <div><div class="user-name">Vacuumlabs</div></div>
+          </div>
+
+          <div class="user">
+            <div
+              class="user-profile-image"
+              style="background-image: url('https://scontent.fksc1-1.fna.fbcdn.net/v/t1.0-9/32540499_1953569511621880_4304908276979466240_n.png?_nc_cat=102&_nc_ht=scontent.fksc1-1.fna&oh=01aba08146c6b6ad74705148ed6799b5&oe=5D01EF67')"
+            ></div>
+            <div><div class="user-name">Decent</div></div>
           </div>
 
           <h2 class="title is-5">Staff</h2>
           <div class="user" *ngFor="let stf of stuff">
             <div
               class="user-profile-image"
-              [style.background-image]="'url(' + stf.photo_url + ')'"></div>
+              [style.background-image]="'url(' + stf.photo_url + ')'"
+            ></div>
             <div>
-              <div class="user-name">{{stf.display_name}}</div>
-              <div class="user-summary">{{stf.summary}}</div>
+              <div class="user-name">{{ stf.display_name }}</div>
+              <div class="user-summary">{{ stf.summary }}</div>
             </div>
           </div>
 
@@ -49,10 +80,11 @@
           <div class="user" *ngFor="let part of participants">
             <div
               class="user-profile-image"
-              [style.background-image]="'url(' + part.photo_url + ')'"></div>
+              [style.background-image]="'url(' + part.photo_url + ')'"
+            ></div>
             <div>
-              <div class="user-name">{{part.display_name}}</div>
-              <div class="user-summary">{{part.summary}}</div>
+              <div class="user-name">{{ part.display_name }}</div>
+              <div class="user-summary">{{ part.summary }}</div>
             </div>
           </div>
         </div>
@@ -60,17 +92,17 @@
     </div>
   </div>
 
-  <div #messages
-       class="messages hidden">
+  <div #messages class="messages hidden">
     <div class="messages-header">
       <div
         class="icon"
         (click)="hideMessages()"
-        style="background-image: url('../../../assets/icons/close.svg')"></div>
+        style="background-image: url('../../../assets/icons/close.svg')"
+      ></div>
       <div class="title is-5">Hack Kosice</div>
     </div>
     <div class="messages-bottom">
-      <input type="text" name="" value="" placeholder="Messsage"/>
+      <input type="text" name="" value="" placeholder="Messsage" />
       <div
         class="icon"
         style="background-image: url('../../../assets/icons/send.svg')"
@@ -80,7 +112,8 @@
       <div class="message my">
         <div
           class="message-image"
-          style="background-image: url('https://pbs.twimg.com/profile_images/1063501382446125057/AH79Idpk_400x400.jpg')"></div>
+          style="background-image: url('https://pbs.twimg.com/profile_images/1063501382446125057/AH79Idpk_400x400.jpg')"
+        ></div>
         <div>
           <div class="message-name"><strong>Denis Panov</strong></div>
           <div class="message-text">Messsage</div>

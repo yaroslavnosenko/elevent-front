@@ -1,40 +1,40 @@
-import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-import {LoginComponent} from './components/login/login.component';
-import {ProfileComponent} from './components/profile-edit/profile.component';
-import {RoomComponent} from './components/room/room.component';
-import {PersonComponent} from './components/person/person.component';
-import {MainComponent} from './components/main/main.component';
-import {AuthGuard} from './guard/auth.guard';
-import {EventComponent} from './components/event/event.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { LoginComponent } from "./components/login/login.component";
+import { ProfileComponent } from "./components/profile-edit/profile.component";
+import { RoomComponent } from "./components/room/room.component";
+import { PersonComponent } from "./components/person/person.component";
+import { MainComponent } from "./components/main/main.component";
+import { AuthGuard } from "./guard/auth.guard";
+import { EventComponent } from "./components/event/event.component";
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: "login",
     component: LoginComponent
   },
   {
-    path: 'profile',
+    path: "profile",
     component: ProfileComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'person/:id',
+    path: "person/:id",
     component: PersonComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'room',
+    path: "room",
     component: RoomComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'event/:id',
+    path: "event/:id",
     component: EventComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: '',
+    path: "",
     component: MainComponent,
     canActivate: [AuthGuard]
   }
@@ -44,5 +44,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

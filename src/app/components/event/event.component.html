@@ -14,7 +14,7 @@
           ></div>
           <a href="{{event.site}}" class="button">Visit website</a>
           <h1 class="title is-4">{{event.name}}</h1>
-          <p><strong>{{event.city + ', '+ event.address}}</strong></p>
+          <p><strong>{{event.city + ', ' + event.address}}</strong></p>
           <p>10 Feb 2007 - 11 Feb 2007</p>
           <hr/>
           <p class="desc">
@@ -36,6 +36,7 @@
           <h2 class="title is-5">Staff</h2>
           <div class="user" *ngFor="let stf of stuff">
             <div
+              (click)="goToUser(stf.id)"
               class="user-profile-image"
               [style.background-image]="'url(' + stf.photo_url + ')'"></div>
             <div>
@@ -48,6 +49,7 @@
 
           <div class="user" *ngFor="let part of participants">
             <div
+              (click)="goToUser(part.id)"
               class="user-profile-image"
               [style.background-image]="'url(' + part.photo_url + ')'"></div>
             <div>
@@ -70,40 +72,36 @@
       <div class="title is-5">Hack Kosice</div>
     </div>
     <div class="messages-bottom">
-      <input type="text" name="" value="" placeholder="Messsage"/>
+      <form [formGroup]="messageForm">
+        <input type="text"
+               formControlName="message"
+               name=""
+               placeholder="Messsage"/>
+      </form>
       <div
+        (click)="sendMessage()"
         class="icon"
         style="background-image: url('../../../assets/icons/send.svg')"
       ></div>
     </div>
     <div class="messages-container">
-      <div class="message my">
+      <div class="message"
+           *ngFor="let message of messagesArray"
+           [ngClass]="myId === message.id ? 'my' : ''">
         <div
           class="message-image"
-          style="background-image: url('https://pbs.twimg.com/profile_images/1063501382446125057/AH79Idpk_400x400.jpg')"></div>
-        <div>
-          <div class="message-name"><strong>Denis Panov</strong></div>
-          <div class="message-text">Messsage</div>
+          [style.background-image]="'url(' + message.photo_url + ')'">
+
         </div>
-      </div>
-      <div class="message">
-        <div
-          class="message-image"
-          style="background-image: url('https://pbs.twimg.com/profile_images/1063501382446125057/AH79Idpk_400x400.jpg')"
-        ></div>
         <div>
-          <div class="message-name"><strong>Denis Panov</strong></div>
-          <div class="message-text">Messsage</div>
-        </div>
-      </div>
-      <div class="message">
-        <div
-          class="message-image"
-          style="background-image: url('https://pbs.twimg.com/profile_images/1063501382446125057/AH79Idpk_400x400.jpg')"
-        ></div>
-        <div>
-          <div class="message-name"><strong>Denis Panov</strong></div>
-          <div class="message-text">Messsage</div>
+          <div class="message-name">
+            <strong>
+              {{message.display_name}}
+            </strong>
+          </div>
+          <div class="message-text">
+            {{message.text}}
+          </div>
         </div>
       </div>
     </div>

@@ -24,11 +24,9 @@ export class PersonComponent implements OnInit, OnDestroy {
       this._user.getUser().subscribe(
         data => {
           this.user = data;
-          console.log(data);
           this._skill.getuserSkills(this.user.id).subscribe(
             (skill: any) => {
               this.skills = skill;
-              console.log(skill);
             }
           );
         }

@@ -1,0 +1,170 @@
+main {
+  padding-top: 64px;
+  padding-bottom: 80px;
+  background-color: #fafafa;
+  min-height: 100vh;
+}
+
+.profile-image {
+  background-color: #eee;
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  border-radius: 100%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+h1 {
+  text-align: center;
+
+}
+
+h1, h2 {
+  // text-align: center;
+  margin-top: 30px;
+}
+
+p {
+  text-align: center;
+}
+
+.desc {
+  text-align: justify;
+}
+
+.column {
+  max-width: 500px;
+  margin: auto;
+}
+
+.columns {
+  margin: 0;
+}
+
+hr {
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #E0E0E0;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  .user-profile-image {
+    margin-right: 15px;
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    background-color: #eee;
+    background-size: cover;
+  }
+  .user-name {
+    font-weight: 600;
+  }
+}
+
+.messages {
+  top: 0;
+  left: 0;
+  z-index: 99;
+  position: fixed;
+  width: 100vw;
+  min-height:  100vh;
+  background: #fafafa;
+  .messages-header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 56px;
+    background: white;
+  }
+  .messages-container {
+    margin-top: 56px;
+    overflow-y: auto;
+    height: calc(100vh - 56px - 48px);
+  }
+  .messages-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    input {
+      margin-left: 15px;
+      flex-grow: 1;
+      font-size: 16px;
+      outline: none;
+      border: none;
+      background: none;
+    }
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.icon {
+  // background: red;
+  height: 56px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  width: 48px;
+}
+
+.message {
+
+  &.my {
+    flex-direction: row-reverse;
+    text-align: right;
+
+    .message-text {
+      background-color: #209cee;
+      color: white;
+    }
+
+  }
+
+  display: flex;
+  background: none;
+  text-align: left;
+  // align-items: center;
+  margin: 10px 0;
+
+  .message-image {
+    background-color: #eee;
+    width: 36px;
+    height: 36px;
+    margin: 0 15px;
+    border-radius: 100%;
+    background-size: cover;
+  }
+
+  .message-name {
+    margin-top: 8px;
+    font-size: 12px;
+  }
+
+  .message-text {
+    padding:10px;
+    margin-top: 8px;
+    background: #eee;
+    border-radius: 1000px;
+  }
+
+}
+
+.mes-b {
+  position: fixed;
+  bottom: 0;
+  z-index: 4;
+}

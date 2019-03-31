@@ -16,6 +16,8 @@ export class MainComponent implements OnInit, OnDestroy {
 
   private subs: Subscription[] = [];
 
+  private readonly TOKEN_NAME = 'event';
+
   constructor(private  fb: FormBuilder,
               private router: Router,
               private _user: UserService,
@@ -26,6 +28,9 @@ export class MainComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    if (localStorage.getItem(this.TOKEN_NAME)) {
+      this.router.navigate(['', 'event', localStorage.getItem(this.TOKEN_NAME)]);
+    }
   }
 
   ngOnDestroy() {
@@ -40,8 +45,8 @@ export class MainComponent implements OnInit, OnDestroy {
             this.subs.push(
               this._event.addUserToEvent(this._user.getID(), data.id).subscribe(
                 (addedToEvent) => {
-                  console.log(addedToEvent);
-                  this.router.navigate(['']);
+                  localStorage.setItem(this.TOKEN_NAME, data.id);
+                  this.router.navigate(['', 'event', data.id]);
                 }, err => {
                   console.log(err);
                 }

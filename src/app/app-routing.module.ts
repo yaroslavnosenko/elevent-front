@@ -5,6 +5,7 @@ import {ProfileComponent} from './components/profile-edit/profile.component';
 import {RoomComponent} from './components/room/room.component';
 import {PersonComponent} from './components/person/person.component';
 import {MainComponent} from './components/main/main.component';
+import {AuthGuard} from './guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
   },
   {
     path: 'person/:id',
-    component: PersonComponent
+    component: PersonComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'room',

@@ -12,10 +12,15 @@
           <div class="field has-addons">
             <div class="title">#</div>
             <div class="control">
-              <input class="input tag-in" type="text" placeholder="tag" />
+              <form [formGroup]="mainForm">
+                <input class="input tag-in"
+                       formControlName="hash"
+                       type="text"
+                       placeholder="tag" />
+              </form>
             </div>
             <div class="control">
-              <a class="button is-info"><strong>Join</strong></a>
+              <a class="button is-info" (click)="find()"><strong>Join</strong></a>
             </div>
           </div>
         </div>

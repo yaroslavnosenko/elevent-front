@@ -1,11 +1,11 @@
 <app-header></app-header>
 <main>
   <div class="container">
-    <div class="">
+    <form [formGroup]="profileForm">
       <div class="columns">
         <div class="column">
           <div class="title is-4">Edit profile</div>
-          <hr />
+          <hr/>
           <div class="field">
             <label class="label">Display name</label>
             <div class="control">
@@ -13,7 +13,7 @@
                 class="input"
                 type="text"
                 placeholder="Enter your name"
-                value="Denis Panov"
+                formControlName="display_name"
               />
             </div>
           </div>
@@ -25,7 +25,7 @@
                 class="input"
                 type="text"
                 placeholder="Text input"
-                value="Web developer at Cassacloud s.r.o"
+                formControlName="summary"
               />
             </div>
           </div>
@@ -36,13 +36,14 @@
               <textarea
                 class="textarea"
                 placeholder="Write something about you..."
-              >I worked on the CRM application for a construction company to improve efficiency of managing resources between buildings all over the southeastern Poland. Main technologies I used: Spring Boot, Angular 4 and MySQL.</textarea>
+                formControlName="bio"
+              ></textarea>
             </div>
           </div>
 
           <h2 class="title is-5">Links</h2>
 
-          <hr />
+          <hr/>
 
           <div class="field">
             <label class="label">Facebook</label>
@@ -69,30 +70,44 @@
           </div>
 
           <h2 class="title is-5">Skills</h2>
-          <hr />
+          <hr/>
 
           <div class="field is-grouped is-grouped-multiline">
-            <div class="control">
+            <div *ngFor="let chip of chips" class="control">
               <div class="tags has-addons">
-                <div class="tag is-medium">Sql</div>
-                <div class="tag is-medium is-delete"></div>
+                <div class="tag is-medium">{{chip}}</div>
+                <div (click)="removeChip(chip)"
+                     class="tag is-medium is-delete"></div>
               </div>
             </div>
           </div>
 
           <div class="field has-addons">
             <div class="control">
-              <input class="input" type="text" placeholder="Skill" />
+              <input class="input"
+                     type="text"
+                     formControlName="skill"
+                     placeholder="Skill"/>
             </div>
-            <div class="control"><a class="button is-info">Add</a></div>
+            <div class="control">
+              <button class="button is-info"
+                      [disabled]="!this.profileForm.controls['skill'].value.length > 0"
+                      (click)="addChip()">
+                Add
+              </button>
+            </div>
           </div>
 
-          <button type="button" class="button save is-info">
-            <strong>Save</strong>
+          <button type="button"
+                  [disabled]="!profileForm.valid"
+                  class="button save is-info">
+            <strong>
+              Save
+            </strong>
           </button>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </main>
 <app-bottom-nav></app-bottom-nav>

@@ -145,7 +145,7 @@
               <button
                 class="button is-info"
                 [disabled]="
-                  !this.profileForm.controls['skill'].value.length > 0
+                  ! (this.profileForm.controls['skill'].value.length > 0)
                 "
                 (click)="addChip()"
               >

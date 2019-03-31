@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       .auth()
       .signInWithPopup(provider)
       .then(result => {
+        console.log(result);
         const token = result.credential.accessToken;
         const fbUID = result.user.providerData[0].uid;
         this._fb.getUserLink(fbUID, token).subscribe(
@@ -62,6 +63,7 @@ export class LoginComponent implements OnInit, OnDestroy {
             email: user.email
           }).subscribe(
             (data: any) => {
+              console.log(data);
               this._user.setToken(data.token);
               if (data.isNew === true) {
                 this.router.navigate(['', 'profile']);

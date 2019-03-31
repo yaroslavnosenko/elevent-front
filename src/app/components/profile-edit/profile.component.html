@@ -5,7 +5,7 @@
       <div class="columns">
         <div class="column">
           <div class="title is-4">Edit profile</div>
-          <hr/>
+          <hr />
           <div class="field">
             <label class="label">Display name</label>
             <div class="control">
@@ -43,7 +43,7 @@
 
           <h2 class="title is-5">Links</h2>
 
-          <hr/>
+          <hr />
 
           <div class="field">
             <label class="label">Facebook</label>
@@ -52,7 +52,7 @@
                 class="input"
                 type="text"
                 placeholder="Profile url"
-                value="facebook.com/denis.panov"
+                value=""
               />
             </div>
           </div>
@@ -63,47 +63,103 @@
               <input
                 class="input"
                 type="text"
-                placeholder="@username"
-                value="@denis.panov"
+                placeholder="Profile url"
+                value=""
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Twitter</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Profile url"
+                value=""
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Dribbble</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Profile url"
+                value=""
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">LinkedIn</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Profile url"
+                value=""
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">GitHub</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Profile url"
+                value=""
               />
             </div>
           </div>
 
           <h2 class="title is-5">Skills</h2>
-          <hr/>
+          <hr />
 
           <div class="field is-grouped is-grouped-multiline">
             <div *ngFor="let chip of chips" class="control">
               <div class="tags has-addons">
-                <div class="tag is-medium">{{chip}}</div>
-                <div (click)="removeChip(chip)"
-                     class="tag is-medium is-delete"></div>
+                <div class="tag is-medium">{{ chip }}</div>
+                <div
+                  (click)="removeChip(chip)"
+                  class="tag is-medium is-delete"
+                ></div>
               </div>
             </div>
           </div>
 
           <div class="field has-addons">
             <div class="control">
-              <input class="input"
-                     type="text"
-                     formControlName="skill"
-                     placeholder="Skill"/>
+              <input
+                class="input"
+                type="text"
+                formControlName="skill"
+                placeholder="Skill"
+              />
             </div>
             <div class="control">
-              <button class="button is-info"
-                      [disabled]="!this.profileForm.controls['skill'].value.length > 0"
-                      (click)="addChip()">
+              <button
+                class="button is-info"
+                [disabled]="
+                  !this.profileForm.controls['skill'].value.length > 0
+                "
+                (click)="addChip()"
+              >
                 Add
               </button>
             </div>
           </div>
 
-          <button type="button"
-                  [disabled]="!profileForm.valid"
-                  class="button save is-info">
-            <strong>
-              Save
-            </strong>
+          <button
+            type="button"
+            [disabled]="!profileForm.valid"
+            class="button save is-info"
+          >
+            <strong> Save </strong>
           </button>
         </div>
       </div>

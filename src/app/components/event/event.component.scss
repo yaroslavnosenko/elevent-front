@@ -167,4 +167,15 @@ hr {
   position: fixed;
   bottom: 0;
   z-index: 4;
+  margin: 0;
+  width: 200px;
+  bottom: 70px;
+  left: calc(50vw - 100px);
+}
+
+.button {
+  margin: auto;
+  display: block;
+  width: 200px;
+  margin-top: 20px;
 }

@@ -13,7 +13,7 @@ export class ChatService {
     this.socket.emit('new-message', message);
   }
 
-  public getMessages()  {
+  public getMessages() {
     return Observable.create((observer) => {
       this.socket.on('new-message', (message) => {
         observer.next(message);

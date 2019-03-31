@@ -53,6 +53,17 @@ export class EventComponent implements OnInit, OnDestroy {
     );
 
     this.subs.push(
+      this._event.getAllMessages().subscribe(
+        (messages: any) => {
+          console.log(messages);
+          this.messagesArray = messages;
+        }, err => {
+          console.log(err);
+        }
+      )
+    );
+
+    this.subs.push(
       this._user.getUser().subscribe(
         (user: any) => {
           this.user = user;

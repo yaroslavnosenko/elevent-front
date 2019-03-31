@@ -31,4 +31,8 @@ export class EventService {
   public getEventparticipants(id: number) {
     return this.http.get(`/api/event/users/${id}`);
   }
+
+  public getAllMessages() {
+    return this.http.get('/api/messages');
+  }
 }

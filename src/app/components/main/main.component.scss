@@ -1,12 +1,12 @@
 main {
-  padding-top: 100px;
+  padding-top: 80px;
   padding-bottom: 80px;
   background-color: #fafafa;
   min-height: 100vh;
 }
 
 h2 {
-  margin-top: 30px;
+  margin-top: 0px;
 }
 
 .button {
@@ -32,4 +32,12 @@ hr {
   display: block;
   margin-top: 30px;
   width: 100%;
+}
+
+.tag-in {
+  margin-left: 5px;
+}
+
+.field {
+  margin-top: 50px;
 }

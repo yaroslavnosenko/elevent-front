@@ -1,0 +1,19 @@
+.bottom-nav {
+  display: flex;
+  height: 56px;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  bottom: 0;
+  z-index: 99;
+  border-top: solid 1px #E0E0E0;
+
+  .item {
+    height: 100%;
+    flex-grow: 1;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+}

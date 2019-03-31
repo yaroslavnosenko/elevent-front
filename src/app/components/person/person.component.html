@@ -1,17 +1,45 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 col-md-10 col-lg-8 col-xl-6">
-      <div class="media">
-        <div class="media-left">
-          <img src="../../../assets/images/images.jpeg"
-               alt="Profile image"
-               class="img-fluid rounded-circle el_profile_image">
-        </div>
-        <div class="media-body ml-3">
-          <h4 class="media-heading">John Doe</h4>
-          <p>Lorem ipsum...</p>
+<app-header></app-header>
+<main>
+  <div class="container">
+    <div class="">
+      <div class="columns">
+        <div class="column">
+          <div
+            class="profile-image"
+            style="background-image: url('https://edia.licdn.com/dms/image/C4D03AQEKcRnUVd4ZKg/profile-displayphoto-shrink_800_800/0?e=1559174400&v=beta&t=-VPGt8rXyKm3mip9IGHregeFDXTASF93zAUqF_xf81k');"
+          ></div>
+          <h2 class="title is-4">Denis Panov</h2>
+          <button type="button" class="button save is-info">
+            <strong>Save</strong>
+          </button>
+          <p>Web developer at Cassacloud s.r.o</p>
+          <hr />
+          <p>
+            I worked on the CRM application for a construction company to
+            improve efficiency of managing resources between buildings all over
+            the southeastern Poland. Main technologies I used: Spring Boot,
+            Angular 4 and MySQL.
+          </p>
+          <hr />
+          <h2 class="title is-5">Links</h2>
+          <div class="tags">
+            <a href="#" class="tag is-rounded social is-medium fb">Facebook</a>
+            <a href="#" class="tag is-rounded social is-medium tw">Twitter</a>
+            <a href="#" class="tag is-rounded social is-medium in">Instagram</a>
+            <a href="#" class="tag is-rounded social is-medium ln">Linkedin</a>
+            <a href="#" class="tag is-rounded social is-medium gh">GitHub</a>
+            <a href="#" class="tag is-rounded social is-medium db">Dribbble</a>
+          </div>
+          <h2 class="title is-5">Skills</h2>
+          <div class="tags">
+            <span class="tag is-medium">Web</span>
+            <span class="tag is-medium">Angular</span>
+            <span class="tag is-medium">NodeJS</span>
+            <span class="tag is-medium">Sql</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</main>
+<app-bottom-nav></app-bottom-nav>

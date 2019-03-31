@@ -1,84 +1,98 @@
-<div class="container">
-  <div class="row justify-content-center mt-5 mb-5">
-    <div class="col-12 col-md-10 col-lg-8 col-xl-6 mt-5">
-      <form [formGroup]="profileForm">
-        <div class="card">
-          <div class="card-header">
-            <p class="mb-0">Profile edit</p>
+<app-header></app-header>
+<main>
+  <div class="container">
+    <div class="">
+      <div class="columns">
+        <div class="column">
+          <div class="title is-4">Edit profile</div>
+          <hr />
+          <div class="field">
+            <label class="label">Display name</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Enter your name"
+                value="Denis Panov"
+              />
+            </div>
           </div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-6">
-                <img src="../../../assets/images/images.jpeg"
-                     alt=""
-                     class="img-fluid rounded-circle">
-              </div>
-              <div class="col-6">
-                <div class="form-group">
-                  <label for="first_name">First name</label>
-                  <input type="text"
-                         id="first_name"
-                         formControlName="first_name"
-                         class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="last_name">Last name</label>
-                  <input type="text"
-                         id="last_name"
-                         formControlName="last_name"
-                         class="form-control">
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <label for="summary">Short summary</label>
-                  <textarea class="form-control el_summary"
-                            formControlName="summary"
-                            name="summary"
-                            id="summary"></textarea>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <label for="bio">Biography</label>
-                  <textarea class="form-control el_summary"
-                            formControlName="bio"
-                            rows="4"
-                            name="bio"
-                            id="bio"></textarea>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <label for="insta">Instagram</label>
-                  <input class="form-control"
-                         formControlName="insta"
-                         type="url"
-                         id="insta">
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <label for="skills">Skills</label>
-                  <input class="form-control"
-                         formControlName="skills"
-                         type="url"
-                         id="skills">
-                </div>
+
+          <div class="field">
+            <label class="label">Summary</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Text input"
+                value="Web developer at Cassacloud s.r.o"
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Bio</label>
+            <div class="control">
+              <textarea
+                class="textarea"
+                placeholder="Write something about you..."
+              >I worked on the CRM application for a construction company to improve efficiency of managing resources between buildings all over the southeastern Poland. Main technologies I used: Spring Boot, Angular 4 and MySQL.</textarea>
+            </div>
+          </div>
+
+          <h2 class="title is-5">Links</h2>
+
+          <hr />
+
+          <div class="field">
+            <label class="label">Facebook</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Profile url"
+                value="facebook.com/denis.panov"
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Instagram</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="@username"
+                value="@denis.panov"
+              />
+            </div>
+          </div>
+
+          <h2 class="title is-5">Skills</h2>
+          <hr />
+
+          <div class="field is-grouped is-grouped-multiline">
+            <div class="control">
+              <div class="tags has-addons">
+                <div class="tag is-medium">Sql</div>
+                <div class="tag is-medium is-delete"></div>
               </div>
             </div>
           </div>
-          <div class="card-footer">
-            <div class="row justify-content-end">
-              <div class="col-auto">
-                <button class="btn btn-outline-success">
-                  Save
-                </button>
-              </div>
+
+          <div class="field has-addons">
+            <div class="control">
+              <input class="input" type="text" placeholder="Skill" />
             </div>
+            <div class="control"><a class="button is-info">Add</a></div>
           </div>
+
+          <button type="button" class="button save is-info">
+            <strong>Save</strong>
+          </button>
         </div>
-      </form>
+      </div>
     </div>
   </div>
-</div>
+</main>
+<app-bottom-nav></app-bottom-nav>

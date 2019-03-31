@@ -1,0 +1,81 @@
+main {
+  padding-top: 64px;
+  padding-bottom: 80px;
+  background-color: #fafafa;
+  min-height: 100vh;
+}
+
+.profile-image {
+  background-color: #eee;
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  border-radius: 100%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+p {
+  text-align: center;
+}
+
+.column {
+  max-width: 500px;
+  margin: auto;
+}
+
+.columns {
+  margin: 0;
+}
+
+hr {
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #E0E0E0;
+}
+
+.social {
+  color: white;
+  background: #212121;
+}
+
+.save {
+  margin: auto;
+  display: block;
+  margin-bottom: 30px;
+  // width: 150px;
+}
+
+.tags {
+  justify-content: center;
+}
+
+.fb {
+  background: #3b5998;
+}
+
+.tw {
+  background: #1da1f2;
+}
+
+.in {
+  background: #c32aa3;
+}
+
+.ln {
+  background: #007bb5;
+}
+
+.gh {
+  background: #171A21;
+}
+
+.db {
+  background: #ea4c89;
+}

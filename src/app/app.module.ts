@@ -12,6 +12,7 @@ import { PersonComponent } from "./components/person/person.component";
 import { MainComponent } from "./components/main/main.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { BottomNavComponent } from "./components/bottom-nav/bottom-nav.component";
+import { EventComponent } from './components/event/event.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BottomNavComponent } from "./components/bottom-nav/bottom-nav.component
     PersonComponent,
     MainComponent,
     HeaderComponent,
-    BottomNavComponent
+    BottomNavComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,
